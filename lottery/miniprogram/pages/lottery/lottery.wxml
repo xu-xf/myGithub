@@ -1,0 +1,36 @@
+<!--miniprogram/pages/lottery/lottery.wxml-->
+<view class="container">
+  <view class='title'>谁最倒霉！！！</view>
+  <!-- 转盘 s -->
+  <view class='chartpie' wx:if='{{lotterytype == "round"}}'>
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+    <view class='roundArrow' bindtap='lotteryRound' animation="{{aniRoundData}}">
+      开始
+      <view class='arrow'></view>
+    </view>
+  </view>
+  <!-- 转盘 e -->
+  <!-- 轮播 s -->
+  <!-- <view wx:if='{{lotterytype == "slide"}}' class='slide'>
+    <view class='round-circle' wx:for="{{lotteryitem}}">
+      <view animation='{{aniSlideData}}'>xx</view>
+      <view animation='{{aniSlideData}}'>xx</view>
+      <view animation='{{aniSlideData}}'>xx</view>
+    </view>
+    <view class='txt-center'>
+      <button bindtap='lotterySlide' class='roundbtn' size='mini' type='primary'>开始</button>
+    </view>
+  </view> -->
+  <!-- 轮播 e -->
+  <block wx:if="{{list.length > 0}}">
+    <view class='prize-list'>
+    <swiper autoplay="false" interval="2000" vertical="true" circular="true" display-multiple-items="{{list.length <= 5 ? list.length : 5}}" style="height: {{list.length <= 5 ? (30 * list.length) : 150}}px;">
+      <block wx:for="{{list}}" wx:key="*this">
+        <swiper-item>
+          <text>{{item.txt}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  </block>
+</view>

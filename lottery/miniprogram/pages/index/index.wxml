@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="container">
+    <button type='primary' class='newbtn' catchtap='popshowhide'>新建抽奖</button>
+    <view class='list-tit'>我最近发起的抽奖</view>
+    <scroll-view class="list" scroll-y='true'>
+      <navigator url=''>1. 谁最倒霉</navigator>
+      <navigator url=''>2. 谁最倒霉</navigator>
+      <navigator url=''>3. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+      <navigator url=''>4. 谁最倒霉</navigator>
+    </scroll-view>
+    <view class='popbg {{pophide ? "hide" : ""}}'></view>
+    <view class='newpop {{pophide ? "hide" : ""}}'>
+      <form catchsubmit="formSubmit" class='form'>
+        <view class='formview'>
+          <label>标题</label>
+          <input id='formtit' type='text' class='inp' name="title"></input>
+        </view> 
+        <view class='formview'>
+          <label>参与抽奖项</label>
+          <view>
+            <view class='additem' wx:for="{{additem}}" wx:key="*this">
+              <input type='text' class='inp' name="lotteryitem{{item}}"></input>
+              <text class='addicon' catchtap='addinput' data-id='{{item}}'>+</text>
+              <text class='deleteicon' catchtap='deleteinput' data-id='{{item}}'>-</text>
+            </view>
+          </view>
+        </view>
+        <view class='formview'>
+          <label>抽奖类型</label>
+          <radio-group class='radiogr' name="lotterytype">
+            <label>
+              <radio value='round' checked='true'></radio>转盘
+            </label>
+            <label>
+              <radio value='slide'></radio>轮播
+            </label>
+          </radio-group>
+        </view>
+        <view class='formview'>
+          <label>获奖语类型</label>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{rewardTxt}}" class='inp' name="reward">
+            <view class="picker">
+              {{rewardTxt[index]}}
+            </view>
+          </picker>
+        </view>
+        <view class='formview2'>
+          <button type='primary' plain='true' size='mini' formType="submit">生成</button>
+        </view>
+      </form>
+      <icon type='cancel' size='23' color='#aaa' class='popclose' catchtap='popshowhide'></icon>
+    </view>
+</view>

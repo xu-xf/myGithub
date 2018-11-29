@@ -1,0 +1,99 @@
+/**index.wxss**/
+.container {
+  padding: 0 30rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+.newbtn {
+  width: 70%;
+  margin: 200rpx auto;
+}
+.list-tit {
+  line-height: 2;
+  background: #fafafa;
+  border: 1px solid #179B16;
+  text-align: center;
+}
+.list {
+  height: 400rpx;
+  border: 1px solid #179B16;
+  border-top: none;
+  padding: 0 30rpx 30rpx;
+  box-sizing: border-box;
+}
+.list navigator{
+  font-size: 12px;
+  line-height: 2.5;
+  border-bottom: 1px dashed #ccc;
+}
+.newpop {
+  position: absolute;
+  width: 90%;
+  max-height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  left: 50%;
+  top: 50%;
+  background: #fff;
+  border-radius: 10rpx;
+  z-index: 11;
+  transform: translate(-50%, -50%);
+}
+.form {
+  display: block;
+  margin: 70rpx 20rpx 30rpx;
+}
+.popclose {
+  position: absolute;
+  right: 10rpx;
+  top:10rpx;
+}
+.formview2 {
+  text-align: center
+}
+.formview {
+  margin-bottom: 30rpx;
+  display: flex;
+}
+.formview .inp {
+  width: 300rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+.formview>label {
+  width: 75px;
+  text-align: right;
+  margin-right: 20rpx;
+}
+.radiogr label{
+  margin-right: 20rpx;
+}
+.additem {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.additem text {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  text-align: center;     
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+.addicon {
+  background: #179B16;
+  margin: 0 20rpx;
+}
+.deleteicon {
+  background: red;
+}
